@@ -1,0 +1,27 @@
+{
+    "name": "innoweb/silverstripe-image-templated-shortcode",
+    "type": "silverstripe-vendormodule",
+    "description": "Render shortcode images using SS template",
+    "license": "proprietary",
+    "keywords": ["silverstripe", "cms", "images", "editor", "shortcodes", "templates"],
+    "homepage": "https://github.com/innowebau/silverstripe-image-templated-shortcode",
+    "support": {
+        "issues": "https://github.com/innowebau/silverstripe-image-templated-shortcode/issues"
+    },
+    "authors": [{
+        "name": "Florian Thoma",
+        "homepage": "https://www.innoweb.com.au"
+    }],
+    "require": {
+        "silverstripe/vendor-plugin": "^1.0",
+        "silverstripe/framework": "^4.1",
+        "silverstripe/html5": "^2.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Innoweb\\ImageTemplatedShortcode\\": "src/"
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,6 @@
+---
+Name: image-templated-shortcode
+---
+
+Innoweb\ImageTemplatedShortcode\ImageShortcodeHandler:
+  template: 'DBFile_image'
