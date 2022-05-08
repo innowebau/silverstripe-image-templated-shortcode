@@ -1,4 +1,4 @@
-# Silverstripe Remove Trailing Slash
+# Silverstripe Templated Image Shortcodes
 
 ## Overview
 
