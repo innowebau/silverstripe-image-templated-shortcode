@@ -84,6 +84,7 @@ class ImageShortcodeHandler extends ImageShortcodeProvider
         $markup = $image->renderWith($template, [
             'Class' => $args['class'] ?? null,
             'Loading' => $args['loading'] ?? null,
+            'AltText' => $args['alt'] ?? null,
         ])->RAW();
 
         // cache it for future reference
