@@ -2,7 +2,10 @@
 
 ## Overview
 
-Render shortcode images using SS template
+Renders image shortcodes (from the WYSIWYG editor) using the default SS image template `DBFile_image`.
+
+This is useful if you want to use for example [resonsive images](https://github.com/heyday/silverstripe-responsive-images) 
+or similar for your WYSIWYG images.
 
 ## Requirements
 
@@ -20,7 +23,7 @@ composer require innoweb/silverstripe-image-templated-shortcode dev-master
 ```
 Then run dev/build.
 
-## Configuration
+## Usage
 
 By default the module uses the SS `DBFile_image` template for the images. You can create your own in your theme or 
 include the one from this module in your theme stack:
@@ -42,6 +45,11 @@ Innoweb\ImageTemplatedShortcode\ImageShortcodeHandler:
   template: 'Your_Template'
 ```
 
+If you use [resonsive images](https://github.com/heyday/silverstripe-responsive-images) or other image modules that 
+use different templates, I suggest using a custom template for the short codes, so that the original `DBFile_image`
+stays unchaned for displaying images in the CMS. (e.g if your responsive image or lazy load functionality requires 
+Javascript, that script might not be available in the CMS.)
+
 ## License
 
-Proprietary
+BSD 3-Clause License, see [License](license.md)

@@ -2,7 +2,7 @@
     "name": "innoweb/silverstripe-image-templated-shortcode",
     "type": "silverstripe-vendormodule",
     "description": "Render shortcode images using SS template",
-    "license": "proprietary",
+    "license": "BSD-3-Clause",
     "keywords": ["silverstripe", "cms", "images", "editor", "shortcodes", "templates"],
     "homepage": "https://github.com/innowebau/silverstripe-image-templated-shortcode",
     "support": {
