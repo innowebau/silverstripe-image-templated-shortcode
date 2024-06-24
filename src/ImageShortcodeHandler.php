@@ -57,18 +57,31 @@ class ImageShortcodeHandler extends ImageShortcodeProvider
         $image = $record;
         $width = null;
         $height = null;
-        if ($record instanceof Image) {
-            $width = isset($args['width']) ? (int) $args['width'] : null;
-            $height = isset($args['height']) ? (int) $args['height'] : null;
-            $hasCustomDimensions = ($width && $height);
-            if ($hasCustomDimensions && (($width != $record->getWidth()) || ($height != $record->getHeight()))) {
-                $resized = $record->ResizedImage($width, $height);
-                // Make sure that the resized image actually returns an image
-                if ($resized) {
-                    $image = $resized;
-                }
-            }
-        }
+		if ($record instanceof Image)
+		{
+			$baseWidth = $record->getWidth();
+			$baseHeight = $record->getHeight();
+			$resized = null;
+			$width = isset($args['width']) ? (int) $args['width'] : null;
+			$height = isset($args['height']) ? (int) $args['height'] : null;
+
+			if (empty($height) && $width && $width !== $baseWidth) {
+				$resized = $record->ScaleMaxWidth($width, $height);
+			}
+			elseif (empty($width) && $height && $height !== $baseHeight) {
+				$resized = $record->ScaleMaxHeight($width, $height);
+			}
+			elseif ($width && $height && ($width !== $baseWidth || $height !== $baseHeight)) {
+				$resized = $record->ResizedImage($width, $height);
+			}
+
+			// Make sure that the resized image actually returns an image
+			if ($resized) {
+				$image = $resized;
+				$width = $image->getWidth();
+				$height = $image->getHeight();
+			}
+		}
 
         // Determine whether loading="lazy" is set
         $args = self::updateLoadingValue($args, $width, $height);
