@@ -1,5 +1,7 @@
 # Silverstripe Templated Image Shortcodes
 
+This module is deprecated as it's functionality is now part of core since Silverstripe 5.3 (silverstripe/assets 2.3).
+
 ## Overview
 
 Renders image shortcodes (from the WYSIWYG editor) using the default SS image template `DBFile_image`.
@@ -13,6 +15,7 @@ or similar for your WYSIWYG images.
 * Silverstripe Assets 2
 
 Note: this version is compatible with Silverstripe 5. 
+
 For Silverstripe 4, please see the [1 release line](https://github.com/innowebau/silverstripe-image-templated-shortcode/tree/1).
 
 ## Installation
